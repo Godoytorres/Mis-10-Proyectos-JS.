@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Reto de los 10 Proyectos de JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div>
+            <p class="eyebrow">El Reto de los 10 Proyectos de JavaScript</p>
+            <h1>Mis 10 Proyectos JS</h1>
+            <p class="subtitle">Hecho por: <strong>Verónica Godoy</strong></p>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Navegación de proyectos">
+        <button type="button" data-target="project1">Contador</button>
+        <button type="button" data-target="project2">To-Do List</button>
+        <button type="button" data-target="project3">Adivina el Número</button>
+        <button type="button" data-target="project4">Calculadora</button>
+        <button type="button" data-target="project5">Color Aleatorio</button>
+        <button type="button" data-target="project6">Temporizador</button>
+        <button type="button" data-target="project7">Contraseñas</button>
+        <button type="button" data-target="project8">Modo Oscuro</button>
+        <button type="button" data-target="project9">Piedra Papel Tijera</button>
+        <button type="button" data-target="project10">Galería</button>
+    </nav>
+
+    <main class="content">
+        <section id="project1" class="project active">
+            <h2>Proyecto 1: Contador Inteligente</h2>
+            <p>Incrementa, decrementa o reinicia el contador. El color cambia según el valor y se guarda en localStorage.</p>
+            <div class="counter-card">
+                <p id="counterValue" class="counter-value">0</p>
+                <div class="button-row">
+                    <button id="counterMinus">-1</button>
+                    <button id="counterReset">Reiniciar</button>
+                    <button id="counterPlus">+1</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="project2" class="project">
+            <h2>Proyecto 2: Lista de Tareas</h2>
+            <p>Agrega tareas, márcalas como completadas y elimina las que ya no necesites.</p>
+            <div class="todo-card">
+                <div class="todo-input-row">
+                    <input id="todoInput" type="text" placeholder="Escribe una tarea" aria-label="Nueva tarea">
+                    <button id="todoAdd">Agregar</button>
+                </div>
+                <ul id="todoList" class="todo-list"></ul>
+            </div>
+        </section>
+
+        <section id="project3" class="project">
+            <h2>Proyecto 3: Adivina el Número</h2>
+            <p>Adivina el número secreto entre 1 y 100. Recibirás pistas y podrás iniciar un nuevo juego.</p>
+            <div class="game-card">
+                <input id="guessInput" type="number" min="1" max="100" placeholder="Tu número" aria-label="Número a adivinar">
+                <button id="guessButton">Adivinar</button>
+                <p id="guessMessage" class="message">Introduce un número y presiona Adivinar.</p>
+                <p>Intentos: <span id="guessAttempts">0</span></p>
+                <button id="guessReset">Nuevo juego</button>
+            </div>
+        </section>
+
+        <section id="project4" class="project">
+            <h2>Proyecto 4: Calculadora Básica</h2>
+            <p>Realiza operaciones básicas y ve el resultado en una pantalla. Incluye manejo de errores.</p>
+            <div class="calculator-card">
+                <input id="calcDisplay" class="calculator-display" type="text" readonly value="0" aria-label="Pantalla de calculadora">
+                <div class="calculator-buttons">
+                    <button data-value="7">7</button>
+                    <button data-value="8">8</button>
+                    <button data-value="9">9</button>
+                    <button data-value="/">÷</button>
+                    <button data-value="4">4</button>
+                    <button data-value="5">5</button>
+                    <button data-value="6">6</button>
+                    <button data-value="*">×</button>
+                    <button data-value="1">1</button>
+                    <button data-value="2">2</button>
+                    <button data-value="3">3</button>
+                    <button data-value="-">-</button>
+                    <button data-value="0">0</button>
+                    <button data-value=".">.</button>
+                    <button id="calcEqual">=</button>
+                    <button data-value="+">+</button>
+                    <button id="calcClear" class="wide-button">C</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="project5" class="project">
+            <h2>Proyecto 5: Cambiador de Colores Aleatorios</h2>
+            <p>Cambia el fondo de la página con un color aleatorio y copia el código hexadecimal.</p>
+            <div class="color-card">
+                <button id="colorChange">Cambiar color</button>
+                <p>Color actual: <span id="colorCode">#ffffff</span></p>
+                <button id="copyColor">Copiar código</button>
+            </div>
+        </section>
+
+        <section id="project6" class="project">
+            <h2>Proyecto 6: Temporizador</h2>
+            <p>Configura minutos y segundos, inicia la cuenta regresiva, pausa o reinicia.</p>
+            <div class="timer-card">
+                <div class="timer-input-row">
+                    <label>Minutos <input id="timerMinutes" type="number" min="0" value="0"></label>
+                    <label>Segundos <input id="timerSeconds" type="number" min="0" max="59" value="30"></label>
+                </div>
+                <p id="timerDisplay" class="timer-display">00:30</p>
+                <div class="button-row">
+                    <button id="timerStart">Iniciar</button>
+                    <button id="timerPause">Pausar</button>
+                    <button id="timerReset">Reiniciar</button>
+                </div>
+                <p id="timerMessage" class="message"></p>
+            </div>
+        </section>
+
+        <section id="project7" class="project">
+            <h2>Proyecto 7: Generador de Contraseñas</h2>
+            <p>Elige qué tipos de caracteres usar, selecciona la longitud y genera una contraseña segura.</p>
+            <div class="password-card">
+                <div class="checkbox-row">
+                    <label><input id="passUpper" type="checkbox" checked>Mayúsculas</label>
+                    <label><input id="passLower" type="checkbox" checked>Minúsculas</label>
+                    <label><input id="passNumbers" type="checkbox" checked>Números</label>
+                    <label><input id="passSymbols" type="checkbox">Símbolos</label>
+                </div>
+                <label class="range-label">Longitud: <span id="passLengthValue">12</span>
+                    <input id="passLength" type="range" min="6" max="20" value="12">
+                </label>
+                <div class="button-row">
+                    <button id="passGenerate">Generar contraseña</button>
+                    <button id="passCopy">Copiar</button>
+                </div>
+                <p id="passResult" class="password-result">Tu contraseña aparecerá aquí.</p>
+            </div>
+        </section>
+
+        <section id="project8" class="project">
+            <h2>Proyecto 8: Modo Oscuro / Claro</h2>
+            <p>Cambia entre modo claro y oscuro y guarda tu preferencia en localStorage.</p>
+            <div class="theme-card">
+                <label class="theme-switch">
+                    <input id="themeToggle" type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <p id="themeText">Modo claro</p>
+            </div>
+        </section>
+
+        <section id="project9" class="project">
+            <h2>Proyecto 9: Piedra, Papel o Tijera</h2>
+            <p>Juega contra la computadora y lleva la cuenta de las rondas ganadas.</p>
+            <div class="rps-card">
+                <div class="button-row">
+                    <button class="rps-button" data-move="piedra">Piedra</button>
+                    <button class="rps-button" data-move="papel">Papel</button>
+                    <button class="rps-button" data-move="tijera">Tijera</button>
+                </div>
+                <p id="rpsResult">Elige una opción para comenzar.</p>
+                <p>Usuario: <span id="rpsUserScore">0</span> - Computadora: <span id="rpsComputerScore">0</span></p>
+                <button id="rpsReset">Reiniciar marcador</button>
+            </div>
+        </section>
+
+        <section id="project10" class="project">
+            <h2>Proyecto 10: Galería de Imágenes con Filtros</h2>
+            <p>Filtra imágenes por categoría, busca por palabra y ábrelas en un modal grande.</p>
+            <div class="gallery-controls">
+                <button class="gallery-filter active" data-filter="all">Todas</button>
+                <button class="gallery-filter" data-filter="animales">Animales</button>
+                <button class="gallery-filter" data-filter="tecnologia">Tecnología</button>
+                <button class="gallery-filter" data-filter="naturaleza">Naturaleza</button>
+                <input id="gallerySearch" type="search" placeholder="Buscar imágenes..." aria-label="Buscar imágenes">
+            </div>
+            <div id="galleryGrid" class="gallery-grid"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Verónica Godoy · 2026 · <a class="footer-link" href="https://github.com/Godoytorres" target="_blank" rel="noreferrer noopener">
+            <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 0.297C5.371 0.297 0 5.668 0 12.297c0 5.302 3.438 9.799 8.205 11.387.6.111.82-.261.82-.579 0-.286-.01-1.041-.016-2.045-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.492.998.108-.775.419-1.305.762-1.605-2.665-.303-5.467-1.333-5.467-5.931 0-1.31.468-2.381 1.236-3.222-.124-.303-.536-1.523.116-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.043.138 3.003.404 2.292-1.552 3.299-1.23 3.299-1.23.653 1.653.241 2.873.118 3.176.77.841 1.235 1.912 1.235 3.222 0 4.61-2.807 5.625-5.48 5.921.43.371.813 1.102.813 2.222 0 1.606-.014 2.898-.014 3.293 0 .32.218.694.825.576C20.565 22.092 24 17.598 24 12.297 24 5.668 18.627.297 12 .297z"></path>
+            </svg>
+            GitHub
+        </a></p>
+    </footer>
+
+    <div id="imageModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button id="modalClose" class="modal-close" aria-label="Cerrar modal">✕</button>
+            <img id="modalImage" src="" alt="Imagen ampliada">
+            <p id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
